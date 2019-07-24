@@ -3,11 +3,11 @@
 ; created by AheadLib
 ; github:https://github.com/strivexjun/AheadLib-x86-x64
 ;
-; °Ñ .asm ÎÄ¼şÌí¼Óµ½¹¤³Ì-ÓÒ¼ü-ÊôĞÔ-³£¹æ-ÏîÀàĞÍ-×Ô¶¨ÒåÉú³É¹¤¾ß, ´ÓÉú³ÉÖĞÅÅ³ı-·ñ
-; È»ºó¸´ÖÆÏÂÃæÃüÁîÌîÈë
-; ÃüÁîĞĞ ml64 /Fo $(IntDir)%(fileName).obj /c %(fileName).asm
-; Êä³ö $(IntDir)%(fileName).obj;%(Outputs)
-; Á´½Ó¶ÔÏó-ÊÇ
+; æŠŠ .asm æ–‡ä»¶æ·»åŠ åˆ°å·¥ç¨‹-å³é”®-å±æ€§-å¸¸è§„-é¡¹ç±»å‹-è‡ªå®šä¹‰ç”Ÿæˆå·¥å…·, ä»ç”Ÿæˆä¸­æ’é™¤-å¦
+; ç„¶åå¤åˆ¶ä¸‹é¢å‘½ä»¤å¡«å…¥
+; å‘½ä»¤è¡Œ ml64 /Fo $(IntDir)%(fileName).obj /c %(fileName).asm
+; è¾“å‡º $(IntDir)%(fileName).obj;%(Outputs)
+; é“¾æ¥å¯¹è±¡-æ˜¯
 ;
 
 
@@ -79,7 +79,8 @@ EXTERN pfnAheadLib_WinHttpWebSocketShutdown:dq;
 EXTERN pfnAheadLib_WinHttpWriteData:dq;
 EXTERN pfnAheadLib_WinHttpWriteProxySettings:dq;
 
-; ·¢ÏÖÒ»¸öbug
+; å‘ç°ä¸€ä¸ªbug,é»˜è®¤è¿™é‡Œæ²¡æœ‰æ”¾åœ¨ä»£ç æ®µ,å¯¼è‡´å†…å­˜æƒé™å¼‚å¸¸
+; åŠ å…¥ä¸‹è¡Œå³å¯
 .CODE
 AheadLib_DllCanUnloadNow PROC
   jmp pfnAheadLib_DllCanUnloadNow
