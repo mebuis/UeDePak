@@ -1,24 +1,25 @@
 UeDePak
-��Դ�����ڻ�ȡUEʹ��AES����ʱ��key -- ��֧��x64λ��Ϸ
+本源码用于获取UE使用AES加密时的key -- 仅支持x64位游戏
 
-ԭ��:
-1.ʹ���� IDA �� sigmaker �����ȡ AES ��������
-2.ӳ��ٳ�ע��
-3.hook AES ���ܺ���
-4.��ӡ AES ����key
--- ��key��ʽΪ "0x" + 32�� byte ����ʽ
--- ����ʽ����ֱ�������� umodel
+原理:
+1.使用了 IDA 的 sigmaker 插件提取 AES 解密特征
+2.映像劫持注入
+3.hook AES 解密函数
+4.打印 AES 解密key
+-- 该key格式为 "0x" + 32个 byte 的形式
+-- 该形式可以直接作用于 umodel
 
-5.��Դ������� 4.21 ������������Ϸ�����˲���,���߱�ͨ����
-6.��Դ��� config.h �� hook_jmp_ue.asm �߱�һ����չ��,Դ��ע���н����˼�Ҫ˵��
+5.本源码仅仅对 4.21 的少数几个游戏进行了测试,不具备通用性
+6.本源码的 config.h 及 hook_jmp_ue.asm 具备一定扩展性,源码注释中进行了简要说明
 
-ʹ�÷�ʽ:
-1.$����Ŀ¼ = ��Ϸ��Ŀ¼\WindowsNoEditor\��Ϸ��\Binaries\Win64\
-2.������õ� winhttp.dll ���� $����Ŀ¼ ��
-3.���� $����Ŀ¼ �µ� ��Ϸ��.exe, �ᵯ������̨����
-4.�۲����̨�����еĽ��˵��
+使用方式:
+1.$运行目录 = 游戏根目录\WindowsNoEditor\游戏名\Binaries\Win64\
+2.将编译好的 winhttp.dll 放入 $运行目录 下
+3.运行 $运行目录 下的 游戏名.exe, 会弹出控制台窗口
+4.观察控制台窗口中的结果说明
 
 
-����:
-1.�������߰���,��û����Ҳûʲô�淶
-2.��������
+其它:
+1.代码乱七八糟,即没整理也没什么规范
+2.请无视我蹩脚的英语,问就是机翻
+3.免责声明
