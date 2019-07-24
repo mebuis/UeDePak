@@ -65,7 +65,7 @@ bool setHook() {
   }
   else {
     char temp[20];
-    sprintf_s(temp, "0x%016X", (unsigned int)(OrgDencryptCode + moduleBase));
+    sprintf_s(temp, "0x%016llX", (ULONG_PTR)(OrgDencryptCode + moduleBase));
     Write2Con(std::string("[+] -------- OrgDencryptCode Pointer : ") + temp + "\r\n");
   }
 
